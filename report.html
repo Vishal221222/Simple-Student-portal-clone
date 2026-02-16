@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Report Card</title>
+        <style>
+            h1{
+                text-align: center;
+                font-family:'Times New Roman', Times, serif;
+                border: transparent;
+                background-color:rgb(134, 134, 237);
+                padding: 10px;
+                margin:10px;
+            }
+            
+            .select{
+                padding: 20px;
+                font-size:25px;
+                
+                margin: 20px;
+
+            }
+            #value{
+                font-size: large;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                
+            }
+            #sumbit{
+                padding: 10px;
+                margin: 20px;
+                color: brown;
+                                
+            }
+            body{
+                background-image: url("gl.png");
+                background-repeat: no-repeat;
+                background-size: 500px;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Report Card</h1>
+        <div class="select">
+            <label for="value">Select Semester</label>
+            <select id="value">
+                <option value="choose">Select a option</option>
+                <option value="file:///C:/Users/ASUS/Desktop/icloud/reportcard.pdf">I</option>
+                <option value="file:///C:/Users/ASUS/Desktop/icloud/reportcard.pdf" >II</option>
+                <option value="file:///C:/Users/ASUS/Desktop/icloud/reportcard.pdf" >III</option>
+                <option value="file:///C:/Users/ASUS/Desktop/icloud/reportcard.pdf" >IV</option>
+            </select>
+            
+        </div>
+        <button id="sumbit" onclick="get()" >Generate</button>
+        <p></p>
+        <script>
+            function get(){
+                const val1=document.getElementById("value").value;
+                window.location.href=val1
+            }
+
+        </script>
+    </body>
+</html>

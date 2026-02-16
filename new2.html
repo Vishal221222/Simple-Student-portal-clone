@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>App with Profile Menu</title>
+        <style>
+            #image{
+                text-align: center;
+            }
+            nav{
+                display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 20px; background-color: #ffffff; border-bottom: 1px solid #ddd;
+            height: 50px;
+                
+                
+            }
+            #options{    
+                align-items: center;
+                background-color: rgb(142, 29, 29);
+                color: white;
+                margin-right: 30px;
+            }
+            .navlist{
+                display: flex;
+                gap: 2px; /* Space between links */
+                margin-left: auto; /* Pushes menu to the right side */
+                margin-right: 30px; /* Space between menu and profile icon */
+                align-items: center;
+                list-style: none;
+            }
+            .navlist li{
+                margin-left: 30px;
+                padding: 3px;
+                
+            }
+            .navlist a{
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                position: relative; 
+                transition: color 0.3s ease;                              
+            }
+            .navlist a::after{
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background-color: aliceblue;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: 0.3s
+
+           }
+           .navlist a:hover::after{
+            transform: scaleX(1);
+            width: 100%;
+           }
+            
+            
+
+            
+
+            .profile-icon{
+                height: 40px; width: 40px;
+                color: #ffffff;
+                background-color: brown;
+                border-radius: 50%; line-height: 40px;
+                text-align: center;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: large;
+                user-select: none;
+
+            }
+            .dropdown-menu{
+                display: none; position: relative;
+                top: 10px; right: 20px;
+                background-color: white; border: 1px solid #ccc;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                border-radius: 5px; padding: 15px; min-width: 150px;
+                z-index:1000;
+
+            }
+            .containerlogin{
+                text-align: center;
+                font-size: large;
+                
+                
+            }
+            
+            #login{
+                background: linear-gradient(#c04945, #5d1d1d);
+                color: white;
+                padding: 10px 16px;
+                font-size: 18px;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 6px #451414;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+            #register{
+                background: linear-gradient(#c04945, #5d1d1d);
+                color: white;
+                padding: 10px 16px;
+                font-size: 18px;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 6px #451414;
+                cursor: pointer;
+                transition: all 0.2s ease
+
+            }
+            #username{
+                padding: 12px 16px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                background: #ffffff;
+                box-shadow: 
+                    0 4px 6px rgba(0, 0, 0, 0.2),
+                    0 8px 20px rgba(0, 0, 0, 0.15);
+                transform: rotateX(5deg) rotateY(-5deg);
+                transition: all 0.3s ease;
+            }
+            #pass{
+
+                    padding: 12px 16px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                background: #ffffff;
+                box-shadow: 
+                    0 4px 6px rgba(0, 0, 0, 0.2),
+                    0 8px 20px rgba(0, 0, 0, 0.15);
+                transform: rotateX(5deg) rotateY(-5deg);
+                transition: all 0.3s ease;
+                }
+            .container{
+                display: flex;
+                justify-content: center;
+                
+            }
+            .container2{
+                display: flex;
+                justify-content: center;
+                
+            }
+            
+            #attendance{
+                width: fit-content;
+                border: 3px solid rgb(181, 166, 166);
+                border-radius: 10px;
+                margin: 10px;
+           }
+           #fees{
+                width: fit-content;
+                border: 3px solid rgb(181, 166, 166);
+                border-radius: 10px;
+                margin: 10px;
+                
+           }
+           #calender{
+            width: fit-content;
+                border: 3px solid rgb(181, 166, 166);
+                border-radius: 10px;
+                margin: 10px;
+           }
+           #white{
+            width: fit-content;
+                
+                margin: 10px;
+
+           }
+           .container3{
+            display: flex;
+            justify-content: center;
+           }
+           .about{
+            padding: 10px;
+            margin: 100px;
+            text-align: center;
+            border: transparent;
+            background-color: rgb(163, 64, 64);
+             }
+            
+           
+            .hidden { display: none !important; }
+            .error { color: red; font-size: 0.9em; margin-top: 5px; }
+            
+        </style>
+    </head>
+    <body>
+        <div id="image">
+                <a>
+                    <img src="logo3.png" height="60pxpx">
+                </a>
+            </div>
+        <nav>
+            <div id="logo1">
+                <img src="gl2.png" height="74px">
+            </div>               
+            <div id="options" class="hidden">
+                <ul class="navlist">
+                <li><a href="notfound.html">Attandence</a></li>
+                <li><a href="notfound.html">FEES</a></li>
+                <li><a href="#Home">Acadamic Calender</a></li>
+                <li><a href="#Home">Time Table</a></li>
+                <li><a href="#Home">Report Card</a></li>
+                <li><a href="#Home">Announcements</a></li>
+                <li><a href="#Home">Admit card</a></li>
+
+            </ul> 
+            </div>
+        <div id="user-section" class="hidden">
+            <div id="avatar" class="profile-icon" onclick="toggleMenu()">?</div>
+            
+            <div id="usermenu" class="dropdown-menu">
+                <strong>Account Details</strong>
+                <hr>
+                <p>User: <span id="menu-username"></span></p>
+                <p>Status: Active</p>
+                <button class="logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div id="login1" class="containerlogin">
+        <h2 style="font-size:40px">Login/Register</h2>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="pass" placeholder="Enter Password">
+        <p id="msg" class="error"></p>
+        <button id="login" onclick="login()">Login</button>
+        <button id="register" onclick="register()">Register</button>
+    </div>
+    <div id="dash" class="containerx hidden">
+        <div class="container">
+            <div id="attendance">
+            <a href="notfound.html">
+                <img src="attendance.png" height="180px">
+            </a>
+        </div>
+        <div id="fees">
+            <a href="notfound.html">
+                <img src="fees.png" height="180px" >
+            </a>
+        </div>
+        <div id="calender">
+            <a href="notfound.html">
+                <img src="AC.png" height="180px">
+            </a>
+        </div>
+        </div>
+        <div class="container2">
+            <div id="calender">
+            <a href="notfound.html">
+                <img src="TT.png" height="180px" width="285px">
+            </a>
+        </div>
+        <div id="calender">
+            <a href="report.html">
+                <img src="report.png" height="180px" width="285px">
+            </a>
+        </div>
+        <div id="calender">
+            <a href="notfound.html">
+                <img src="anc.png" height="180px" width="285px">
+            </a>
+        </div>
+        </div>
+        <div class="container3">
+            <div id="calender">
+            <a href="notfound.html">
+                <img src="ADM.png" height="180px" width="285px">
+            </a>
+        </div>
+        <div id="calender">
+            <a href="notfound.html">
+                <img src="examseat.png" height="180px" width="285px">
+            </a>
+        </div>
+        <div id="white">
+            
+                <img src="white.png" height="180px" width="285px">
+            
+        </div>
+        </div>
+        <div class="about">
+            <p>
+                <h2>About Us</h2>
+                <a>Galgotias University is the outcome of a remarkable journey rooted in resilience, vision, and a passion for education. What started as a small publishing initiative has grown into a leading institution shaping thousands of futures. Established with the goal of offering affordable, world-class, skill-based education, the university has become home to over 40,000 students from 40+ countries.
+
+Recognized with an A+ grade by NAAC and known for its innovation, research, and global outreach, Galgotias continues to evolve with a focus on industry-driven learning and inclusivity. Led by a dynamic new generation, it remains committed to transforming lives and building a better future. Every student’s success story reflects the university’s core mission—empowerment through education.</a>
+            </p>
+        </div>
+
+
+    </div>
+        
+    <script>
+        const loginpage=document.getElementById("login1");
+        const content=document.getElementById("dash");
+        const userdetail=document.getElementById("usermenu");
+        const picon=document.getElementById("avatar");
+        const usersection=document.getElementById("user-section");
+        const inneruser=document.getElementById("menu-username");
+        const options=document.getElementById("options");
+        const msg=document.getElementById('msg')
+        const activeUser = localStorage.getItem('currentuser');
+        if (activeUser) loadcontent(activeUser);
+        function register(){
+            const user=document.getElementById("username").value;
+            const pass=document.getElementById("pass").value;
+            if (!user || !pass){
+                return msg.innerText="Please enter username and password";
+
+
+            }
+            localStorage.setItem(user,pass)
+            msg.innerText="Registered!"
+            msg.style.color="green"
+        }
+        function login(){
+            const user=document.getElementById("username").value;
+            const pass=document.getElementById("pass").value;
+            if(localStorage.getItem(user) === pass){
+                localStorage.setItem('currentuser',user)
+                loadcontent(user);
+                
+            }else{
+                msg.innerText="Incorrect Login details";
+                msg.style.color="red";
+            }
+        }
+        function logout(){
+            localStorage.removeItem('currentuser');
+            location.reload()
+        }
+        function loadcontent(user){
+            loginpage.classList.add('hidden');
+            content.classList.remove('hidden');
+            usersection.classList.remove('hidden');
+            options.classList.remove('hidden')
+            
+            inneruser.innerText=user;
+            picon.innerText=user.charAt(0).toUpperCase()
+
+        }
+        function toggleMenu(){
+            if(userdetail.style.display==='block'){
+                userdetail.style.display='none';
+            }else{
+
+                userdetail.style.display='block';
+            }
+
+        }
+        
+    </script>
+    </body>
+</html>
